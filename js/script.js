@@ -4,13 +4,40 @@
 
 //GLOBAL VARIABLES
 /* global $ */
-$("#shoot").click(function(){
+$("#shoot").click(function() {
     let player = $("#input").val();
-    let compute = Math.random(0, 2);
-    if (compute === 0){
-        let computer = "rock";
-    } else if (compute === 1) {
-        let computer = "paper";
+    let compute = Math.random();
+    console.log(compute)
+    let computer = "";
+    if (compute < .33){
+        computer = "rock";
+        console.log(computer);
+    } else if (compute < .67) {
+        computer = "paper";
+        console.log(computer);
+    } else {
+        computer = "scissor";
+        console.log(computer);
+    }
+    
+    if ((player == "rock" && computer == "scissor") ||
+     (player == "scissor" && computer == "paper") || 
+     (player == "paper" && computer == "rock")) {
+        $("#computerChoice").text(computer)
+        $("#userChoice").text(player)
+        console.log("Player won")
+    
+    } else if ((player == "scissor" && computer == "rock") ||
+     (player == "paper" && computer == "scissor") || 
+     (player == "rock" && computer == "paper")) {
+         $("#computerChoice").text(computer)
+         $("#userChoice").text(player)
+        console.log("Player lose") 
+    
+    } else {
+        console.log("Draw!")
+        $("#computerChoice").text(computer)
+        $("#userChoice").text(player)
     }
 
 
