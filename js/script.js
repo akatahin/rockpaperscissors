@@ -4,11 +4,19 @@
 
 //GLOBAL VARIABLES
 /* global $ */
+var winScore = 0;
+var lossScore = 0;
+var drawScore = 0;
+
 $("#shoot").click(function() {
-    let player = $("#input").val();
+    let playerInp = $("#input").val();
+    let player = playerInp.toLowerCase();
     let compute = Math.random();
     console.log(compute)
     let computer = "";
+    
+    
+
     if (compute < .33){
         computer = "rock";
         console.log(computer);
@@ -25,7 +33,11 @@ $("#shoot").click(function() {
      (player == "paper" && computer == "rock")) {
         $("#computerChoice").text(computer)
         $("#userChoice").text(player)
+        $("#result").text("Player won! and Computer lost!")
         console.log("Player won")
+        winScore = winScore + 1
+        $("#win").text(winScore)
+        
     
     } else if ((player == "scissor" && computer == "rock") ||
      (player == "paper" && computer == "scissor") || 
@@ -33,11 +45,21 @@ $("#shoot").click(function() {
          $("#computerChoice").text(computer)
          $("#userChoice").text(player)
         console.log("Player lose") 
+        $("#result").text("Player lost! and Computer won!")
+        lossScore = lossScore + 1
+        $("#loss").text(lossScore)
+        
     
-    } else {
+    } else if (player == computer){
         console.log("Draw!")
         $("#computerChoice").text(computer)
         $("#userChoice").text(player)
+        $("#result").text("Draw!")
+        drawScore = drawScore + 1
+        $("#draw").text(drawScore)
+    
+    } else {
+        $("#result").text("Invalid input")
     }
 
 

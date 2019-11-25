@@ -5,6 +5,7 @@
   <title>RPS Game</title>
   <!-- Link CSS here -->
   <link type='text/css' rel='stylesheet' href='css/style.css' />
+  <link href="https://fonts.googleapis.com/css?family=Special+Elite&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,10 +23,23 @@
 
       <h3>Please Submit Your Choice Below</h3>
       <div>
-        <input id="input">
-        <button id="shoot">Shoot!</button>
+        <input class="style1" id="input">
+        <button class="style1" id="shoot">Shoot!</button>
       </div>
-
+        <div id="scores">
+            <div id="green">
+                <h4>Win</h4>
+                <p id="win">0</p>
+            </div>
+            <div id="yellow">
+                <h4>Draw</h4>
+                <p id="draw">0</p>
+            </div>
+            <div id="red">
+                <h4>Loss</h4>
+                <p id="loss">0</p>
+            </div>
+        </div>
       <div id="choices" class="row">
         <div>
           <h4>User Choice</h4>

@@ -1,3 +1,13 @@
+body{
+    color: rgb(50, 173, 173);
+    background-color: rgb(51, 49, 49);
+    font-family: 'Special Elite', cursive;
+}
+.style1{
+    background-color: rgb(50, 173, 173);
+    color: rgb(51, 49, 49);
+    font-family: 'Special Elite', cursive;
+}
 .row{
   text-align:center;
   
@@ -6,4 +16,18 @@
   display:flex;
   justify-content:space-between;
   
+}
+#scores{
+  display:flex;
+  justify-content:space-between;
+  
+}
+#loss{
+    color: red;
+}
+#win {
+    color: green;
+}
+#draw{
+    color: yellow;
 }
